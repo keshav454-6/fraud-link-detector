@@ -42,12 +42,28 @@
           <p class="subtitle">Protecting you from online threats, one link at a time.</p>
           
           <div class="scanner-container">
-            <form id="scan-form" class="scan-form">
-              <div class="input-group">
-                <input type="url" id="url-input" placeholder="https://example.com" required autocomplete="off" />
-                <button type="submit" class="btn-primary scan-btn">Scan URL</button>
-              </div>
-            </form>
+            <div class="tabs">
+              <button class="tab-btn active" data-target="url-scanner">Scan URL</button>
+              <button class="tab-btn" data-target="email-scanner">Scan Email</button>
+            </div>
+
+            <div id="url-scanner" class="tab-content active">
+              <form id="scan-form" class="scan-form">
+                <div class="input-group">
+                  <input type="url" id="url-input" placeholder="https://example.com" required autocomplete="off" />
+                  <button type="submit" class="btn-primary scan-btn">Scan URL</button>
+                </div>
+              </form>
+            </div>
+
+            <div id="email-scanner" class="tab-content">
+              <form id="email-scan-form" class="scan-form">
+                <div class="input-group textarea-group">
+                  <textarea id="email-input" placeholder="Paste the email content here..." required></textarea>
+                  <button type="submit" class="btn-primary scan-btn">Scan Email</button>
+                </div>
+              </form>
+            </div>
             
             <div id="scan-results" class="scan-results hidden">
                <!-- Results injected by JS -->
